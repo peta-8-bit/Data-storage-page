@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 3em;
+  gap: 2em;
 }
 
 .box-1 {
@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 2em;
-  border-radius: 0px 120px 0px 0px;
+  border-radius: 10px 120px 10px 10px;
 }
 
 .logo {
@@ -67,26 +67,136 @@ body {
   justify-content: center;
   align-items: center;
 }
-.b2content h1 {
+.b2content label {
   font-size: 15px;
   font-weight: 400;
   text-align: center;
 }
-.b2content h1::after {
-  display: block;
-  content: "";
-  margin: 2em;
+.b2content .meter-class {
+  margin-top: 2em;
+  width: 80%;
+  background: none;
+  background-color: hsl(229deg, 41%, 18%);
   height: 15px;
-  width: 81.5%;
-  background-color: hsl(229deg, 57%, 11%);
-  background: linear-gradient(90deg, hsl(6deg, 100%, 80%), hsl(335deg, 100%, 65%));
-  border-radius: 5px;
-  z-index: 2;
+  border-radius: 10px;
+  position: relative;
 }
+.b2content .meter-class:-moz-meter-optimum::-moz-meter-bar {
+  background-image: linear-gradient(90deg, hsl(6deg, 100%, 80%), hsl(335deg, 100%, 65%));
+  border-radius: 10px;
+}
+.b2content meter::-webkit-meter-bar {
+  background: none;
+  background-color: rgba(18, 28, 65, 0.425);
+  height: 15px;
+}
+.b2content .meter-class::-webkit-meter-optimum-value {
+  border-radius: 10px;
+  background-image: linear-gradient(90deg, hsl(6deg, 100%, 80%), hsl(335deg, 100%, 65%));
+}
+.b2content meter::before {
+  content: "";
+  background: none;
+  display: block;
+  background-color: whitesmoke;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  left: 77%;
+  top: 5%;
+}
+
+p {
+  position: absolute;
+  top: 70px;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+}
+p span {
+  content: "content span";
+  background-color: hsl(228deg, 56%, 26%);
+  color: transparent;
+  padding: 1px 120px;
+  display: inline-block;
+  width: 60%;
+}
+
 .left {
   position: absolute;
-  left: 40%;
-  bottom: -10%;
+  left: 25%;
+  right: 25%;
+  bottom: -15%;
   background-color: whitesmoke;
-  color: hsl(229deg, 57%, 11%);
+  color: rgba(0, 0, 0, 0.215);
+  padding: 1.5em 2em;
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+.left span {
+  font-weight: 700;
+  font-size: 35px;
+  color: black;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    flex-direction: row;
+  }
+  .box-1 {
+    max-width: 20em;
+  }
+  .box-2 {
+    position: relative;
+  }
+  .b2content {
+    display: block;
+    padding-top: 2em;
+  }
+  label {
+    text-align: start;
+    margin-left: 3em;
+  }
+  .meter-class {
+    margin-left: 3em;
+  }
+  p {
+    top: 6.5em;
+    width: 85%;
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+  }
+  p span {
+    display: inline-block;
+    width: 100%;
+  }
+  .left {
+    position: absolute;
+    top: -30%;
+    height: 5em;
+    left: 50%;
+    width: 13em;
+    text-align: center;
+  }
+  .left::after {
+    content: "";
+    display: block;
+    background-color: whitesmoke;
+    z-index: 2;
+    height: 40px;
+    width: 40px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+    transform: rotateZ(0);
+    position: absolute;
+    right: 0;
+    top: 90%;
+  }
 }/*# sourceMappingURL=style.css.map */

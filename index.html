@@ -40,13 +40,16 @@
 
   <div class="box-2">
     <div class="b2content">
-      <h1>You’ve used <strong>815 GB</strong> of your storage</h1>
-      <!-- <input class='slider' type="range" name="storage" id="storage" min="0" max="1000" value="815"> -->
-      <!-- <p>0 GB<span class="gap"></span>1000 GB</p>   -->
+      <label for="bar">You’ve used <strong>815 GB</strong> of your storage</label>
+      <meter class='meter-class' id="bar" value="815" min="0" max="1000" optimum="500" low="900" high="0" label="GB"></meter>
+      <p>0 GB<span class="empty"></span>1000 GB</p>
     </div>
     
     <div class="left">
-      185 GB Left
+      <span>
+        185
+      </span>
+        GB LEFT
     </div>
     
   </div>
